@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================================
+   Kazargrad — global styles
+   Public site + admin panel share this stylesheet.
+   ========================================================================= */
+
+@layer base {
+  :root {
+    /* Runtime-overridable brand colors (set by SiteSettings via CSS vars). */
+    --color-primary: #3f5a3a;
+    --color-accent: #f2b705;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: #faf7ef; /* milk white */
+    color: #252525; /* graphite */
+    font-family: 'Manrope', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    color: #2a1a14; /* dark wood */
+    line-height: 1.1;
+  }
+
+  /* Anchor scroll offset so sticky header doesn't cover section headings. */
+  section[id] {
+    scroll-margin-top: 88px;
+  }
+
+  /* Visible focus state for keyboard navigation (accessibility). */
+  :focus-visible {
+    outline: 3px solid #7fb7d8;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .container-px {
+    @apply mx-auto w-full max-w-content px-5 sm:px-6 lg:px-8;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Subtle skeleton shimmer for image placeholders. */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+    background: #efe7d8;
+  }
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.45),
+      transparent
+    );
+    animation: shimmer 1.6s infinite;
+  }
+}
+
+/* Custom scrollbar (subtle, warm). */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8c7a9;
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c2ad88;
+  background-clip: content-box;
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

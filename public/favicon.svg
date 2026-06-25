@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Placeholder favicon for Казарьград. Replace with a real brand mark when available. -->
+  <rect width="64" height="64" rx="14" fill="#3F5A3A" />
+  <path d="M32 12 L52 30 H46 V52 H18 V30 H12 Z" fill="#F2E6D3" />
+  <rect x="27" y="38" width="10" height="14" fill="#8A542E" />
+  <text x="32" y="27" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#2A1A14" font-weight="700">К</text>
+</svg>

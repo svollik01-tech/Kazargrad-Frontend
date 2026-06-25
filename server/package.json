@@ -1,0 +1,16 @@
+{
+  "name": "kazargrad-server",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Backend API for the Kazargrad site: content storage + image uploads.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "multer": "^2.0.1"
+  }
+}
