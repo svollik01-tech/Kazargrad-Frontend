@@ -3,15 +3,12 @@ services:
   api:
     build: ./server
     container_name: kazargrad-api
+    env_file:
+      - .env
     environment:
       - PORT=3001
       - DATA_DIR=/app/data
       - UPLOADS_DIR=/app/uploads
-      - ADMIN_LOGIN=admin
-      - ADMIN_PASSWORD=admin123
-      # ВАЖНО: смените секрет на длинную случайную строку перед продакшеном!
-      # Любой, кто знает секрет, может подделать токен авторизации.
-      - AUTH_SECRET=CHANGE_ME_to_a_long_random_string
     volumes:
       - ./data:/app/data        # JSON-контент переживает пересоздание контейнера
       - ./uploads:/app/uploads  # загруженные картинки (та же папка, что у nginx)
