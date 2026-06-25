@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { HomePage } from '@/pages/HomePage'
+import { PrivacyPage } from '@/pages/PrivacyPage'
 import { ProtectedRoute } from '@/components/admin/ProtectedRoute'
 import { AdminLayout } from '@/components/admin/AdminLayout'
 import { LoginPage } from '@/pages/admin/LoginPage'
@@ -19,6 +20,7 @@ import { ReviewsEditor } from '@/pages/admin/ReviewsEditor'
 import { FaqEditor } from '@/pages/admin/FaqEditor'
 import { ContactsEditor } from '@/pages/admin/ContactsEditor'
 import { FooterEditor } from '@/pages/admin/FooterEditor'
+import { PrivacyEditor } from '@/pages/admin/PrivacyEditor'
 import { GalleryEditor } from '@/pages/admin/GalleryEditor'
 
 /**
@@ -35,6 +37,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/privacy" element={<PrivacyPage />} />
       <Route path="/admin/login" element={<LoginPage />} />
 
       <Route
@@ -61,6 +64,7 @@ export default function App() {
         <Route path="faq" element={<FaqEditor />} />
         <Route path="contacts" element={<ContactsEditor />} />
         <Route path="footer" element={<FooterEditor />} />
+        <Route path="privacy" element={<PrivacyEditor />} />
         <Route path="gallery" element={<GalleryEditor />} />
       </Route>
 

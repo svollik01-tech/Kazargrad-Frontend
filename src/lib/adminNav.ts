@@ -16,6 +16,7 @@ import {
   Phone,
   PanelBottom,
   Images,
+  ShieldCheck,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -46,5 +47,6 @@ export const ADMIN_NAV: AdminNavItem[] = [
   { to: 'faq', label: 'Вопросы (FAQ)', icon: HelpCircle },
   { to: 'contacts', label: 'Контакты', icon: Phone },
   { to: 'footer', label: 'Подвал сайта', icon: PanelBottom },
+  { to: 'privacy', label: 'Политика конфиденциальности', icon: ShieldCheck },
   { to: 'gallery', label: 'Фотогалерея', icon: Images },
 ]

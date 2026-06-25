@@ -305,6 +305,21 @@ export interface FooterContent {
 }
 
 /* ------------------------------------------------------------------ */
+/* Privacy policy                                                      */
+/* ------------------------------------------------------------------ */
+
+export interface PrivacySection extends BaseItem {
+  title: string
+  text: string
+}
+
+export interface PrivacyContent {
+  title: string
+  updatedAt: string
+  sections: PrivacySection[]
+}
+
+/* ------------------------------------------------------------------ */
 /* Gallery                                                             */
 /* ------------------------------------------------------------------ */
 
@@ -363,6 +378,7 @@ export interface SiteContent {
   faq: FaqContent
   contacts: ContactsContent
   footer: FooterContent
+  privacy: PrivacyContent
   gallery: GalleryImage[]
 }
 
