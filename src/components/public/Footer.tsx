@@ -1,4 +1,5 @@
 import { ArrowUp } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import type { FooterContent, SiteSettings } from '@/types/content'
 import { Icon } from '@/lib/icons'
 import { Logo } from '@/components/ui/Logo'
@@ -89,9 +90,15 @@ export function Footer({ footer, settings }: FooterProps) {
               <ul className="mt-5 space-y-1.5 text-sm">
                 {legal.map((l) => (
                   <li key={l.id}>
-                    <a href={l.url} className="underline-offset-2 transition-colors hover:text-sun hover:underline">
-                      {l.label}
-                    </a>
+                    {l.url.startsWith('/') ? (
+                      <Link to={l.url} className="underline-offset-2 transition-colors hover:text-sun hover:underline">
+                        {l.label}
+                      </Link>
+                    ) : (
+                      <a href={l.url} target="_blank" rel="noopener noreferrer" className="underline-offset-2 transition-colors hover:text-sun hover:underline">
+                        {l.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
